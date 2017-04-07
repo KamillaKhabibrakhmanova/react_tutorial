@@ -3,10 +3,27 @@ import React, { Component } from 'react';
 
 // class-based component needed when you need internal record keeping
 // searchBar has access to all of React.Component's functionality
+
+//state: JS object used to record & react to user events
+
 class SearchBar extends Component {
+	//all JS objects has a constructor function that is called whenever a new instance is created
+	//reserved for doing setup inside of a class
+	constructor(props) {
+		//calls parent method on parent class
+		super(props);
+
+		//each class-based object has it's own state object
+		//whenever a component's state is changed, the render function and its child components is re-run
+		this.state = { term: '' };
+	}
 	//every class-based React component must have a render method
 	render() {
-		return <input />
+		return (
+			<div>
+				<input onChange={event => this.setState({ term: event.target.value })} />
+			</div>
+		);
 	}
 }
 
