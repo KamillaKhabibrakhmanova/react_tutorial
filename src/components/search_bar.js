@@ -20,7 +20,7 @@ class SearchBar extends Component {
 	//every class-based React component must have a render method
 	render() {
 		return (
-			<div>
+			<div className='search-bar'>
 				<input
 					value={this.state.term} 
 					onChange={event => this.setState({ term: event.target.value })} />
